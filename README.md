@@ -9,9 +9,10 @@ Installation and Use:
 ---------------------
 Run the logger.SQL script to create a table with the required columns. The 'extra' columns in this module are "url" and "ipaddress".. Of course you can add columns depending on your requirement - Note that these fields are injected in the onBootstrap event in Module.php.
 
-Drop DBLog into your module or vendor folder, add database adapter information to config/autoload/global.php. Logging to the database is as easy as:
+Drop DBLog into your module or vendor folder, add database adapter information to config/autoload/global.php. Add 'DBLog' module to 'application.config.php'. Logging to the database is as easy as:
 
 $logger = $this->getServiceLocator()->get('logger');
+
 $logger->Info('Log this please!');
 
 A test controller/action has been included (/DBLog)
