@@ -24,6 +24,7 @@ CREATE TABLE `log_table` (
   `message` mediumtext,
   `priority` tinyint(4) DEFAULT NULL,
   `priorityName` varchar(45) DEFAULT NULL,
+  `username` varchar(45) DEFAULT NULL,
   `url` varchar(200) DEFAULT NULL,
   `ipaddress` varchar(150) DEFAULT NULL,
   `timestamp` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
