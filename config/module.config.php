@@ -15,6 +15,7 @@ return array(
             'extra' => array(               
                 'url' => 'url',
                 'ipaddress' => 'ipaddress',
+                'username'=>'username'
             ),
         )       
     ),

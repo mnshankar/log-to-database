@@ -16,9 +16,9 @@ class DBLogController extends AbstractActionController
 {    
     public function indexAction() {
         $logger = $this->getServiceLocator()->get('logger');
+        $logger->addExtra(array('username'=>'test'));
         $logger->Info('Log this please!');
         return '';
     }
 }
 
-?>

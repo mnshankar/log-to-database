@@ -21,13 +21,22 @@ class CustomDBLogger extends \Zend\Log\Logger {
         parent::__construct();
     }
 
-    public function log($priority, $message, $extra = array()) {
-        $extra = $this->extra;
-        parent::log($priority, $message, $extra);
+    public function log($priority, $message, $extra = array()) {        
+        parent::log($priority, $message, $this->getExtra());
+    }
+    public function getExtra()
+    {
+        return $this->extra;
     }
 
-    public function setExtra($extra) {
-        $this->extra = $extra;
+    public function addExtra($extra) {
+        if (count($this->getExtra())){
+            $this->extra = array_merge($this->getExtra(), $extra);
+        }        
+        else{
+            $this->extra=$extra;
+        }
+            
     }
 
 }

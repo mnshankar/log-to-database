@@ -32,11 +32,11 @@ class Module {
         );
     }
 
-    public function onBootstrap($e) {
+   public function onBootstrap($e) {
         $e->getApplication()
                 ->getServiceManager()
                 ->get('logger')
-                ->setExtra(array(                    
+                ->addExtra(array(                    
                     'url' => $e->getParam('request')->getRequestUri(),
                     'ipaddress' => $e->getParam('request')->getServer('REMOTE_ADDR'),
                     )
